@@ -99,7 +99,8 @@ void knapsack(Objects arr[],int size,int sackWeight){
         }
         else{
             int remain = sackWeight - sack;
-            
+            float profit = arr[i].profit *(remain/arr[i].weight);
+            arrr1[i].setData(arr[i].index,profit,remain);            
         }
     }
      cout<<sackWeight-sack<<"\n";

@@ -81,29 +81,27 @@ void knapsack(Objects arr[],int size,int sackWeight){
     int sack=0;
     Objects arrr1[7];
     int count = 0;
+    int profit=0;
     for (int i = 0; i < size; i++)
     {
-        if (arr[i].ratio == arr[i+1].ratio)
+       /* if (arr[i].ratio == arr[i+1].ratio)
         {
             if(arr[i].weight<arr[i+1].weight){
                 Objects temp = arr[i];
                 arr[i] = arr[i+1];
                 arr[i+1] = temp; 
             }
-        }
+        }*/
 
         if((sack+arr[i].weight)<=sackWeight){
             sack+=arr[i].weight;
             arrr1[i] = arr[i];
             count++;
-        }
-        else{
-            int remain = sackWeight - sack;
-            float profit = arr[i].profit *(remain/arr[i].weight);
-            arrr1[i].setData(arr[i].index,profit,remain);            
+            profit+=arr[i].profit;
         }
     }
-     cout<<sackWeight-sack<<"\n";
+    cout<<sackWeight-sack<<"\n";
+    cout<<profit<<"\n";
     printArray(arrr1,count);
     
 }

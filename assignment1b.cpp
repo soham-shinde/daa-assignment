@@ -39,7 +39,7 @@ void knapsack_01()
 {
     int knap[size + 1][capacity + 1];
     for (int i = 0; i < size + 1; i++)
-    {
+    i{
         for (int j = 0; j < capacity + 1; j++)
         {
             knap[i][j] = 0;
